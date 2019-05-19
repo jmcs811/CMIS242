@@ -14,7 +14,7 @@ public class Test {
         int counter2014 = 0;
         int counter2015 = 0;
 
-        File a = new File("/home/jcasey/projects/java/cmis140/project1/project1/src/app/data.txt");
+        File a = new File("/home/jcasey/projects/java/cmis242/project1/project1/src/app/data.txt");
         Scanner scanner = new Scanner(a);
 
         while(scanner.hasNext()) {
