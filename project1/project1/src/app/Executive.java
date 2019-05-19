@@ -20,6 +20,6 @@ public class Executive extends Employee {
     }
 
     public String toString() {
-        return (super.toString()+ "\nStock Price: $" + stockPrice + "\n");
+        return (super.toString()+ " Stock Price: $" + stockPrice);
     }
 }

@@ -12,10 +12,10 @@ public class Salesman extends Employee {
 
     @Override
     public int annualSalary() {
-        return super.annualSalary() + totalCommision(this.annualSales) ;
+        return super.annualSalary() + totalCommission(this.annualSales) ;
     }
 
-    private int totalCommision(int annualSales) {
+    private int totalCommission(int annualSales) {
         if (COMMISSION_RATE * annualSales > COMMISSION_MAX) {
             return COMMISSION_MAX;
         }
@@ -24,7 +24,7 @@ public class Salesman extends Employee {
 
     @Override
     public String toString() {
-        return (super.toString() + "\nAnnual Sales: $" + annualSales + "\n");
+        return (super.toString() + " Annual Sales: $" + annualSales);
     }
 
 }

@@ -28,7 +28,7 @@ public class Test {
                 case "Employee":
                     employee = new Employee(name, monthlySalary);
                     break;
-                case "Salseman":
+                case "Salesman":
                     int annualSales = Integer.parseInt(scanner.next());
                     employee = new Salesman(name, monthlySalary, annualSales);
                     break;
@@ -42,7 +42,7 @@ public class Test {
                 case 2014:
                     year2014[counter2014++] = employee;
                     break;
-                default:
+                case 2015:
                     year2015[counter2015++] = employee;
                     break;
             }
@@ -60,7 +60,7 @@ public class Test {
 
         int totalEmployeeSalary = 0;
         for (int i = 0; i < count; i++) {
-            System.out.println(employees[i].toString());
+            System.out.println(employees[i].toString() + " Annual Salary: $" + employees[i].annualSalary());
             totalEmployeeSalary += employees[i].annualSalary();
         }
 
