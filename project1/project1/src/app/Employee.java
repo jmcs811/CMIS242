@@ -1,3 +1,12 @@
+/////////////////////////////////////////////
+// File: Employee.java (base class)
+// Author: Justin Casey
+// Date: March 30, 2019
+// Purpose: Base class of employee. All
+//          other employee classes will
+//          inherit from this class
+//
+
 package app;
 
 import java.text.NumberFormat;
@@ -8,6 +17,8 @@ public class Employee {
   private String name;
   private int monthlySalary;
   private final int YEAR_OF_MONTHS = 12;
+
+  // used for $00.00 format
   public static NumberFormat currentFormat = NumberFormat.getCurrencyInstance(Locale.US);
 
   /*

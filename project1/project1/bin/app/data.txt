@@ -1,10 +1,5 @@
-2014 Employee Smith,John 2000
-2015 Salesman Jones,Bill 3000 100000
-2014 Executive Bush,George 5000 55
-2014 Employee Smith,John 2000
-2015 Salesman Jones,Bill 3000 100000
-2014 Executive Bush,George 5000 55
-2014 Employee Smith,John 2000
-2015 Salesman Jones,Bill 3000 100000
-2014 Executive Bush,George 5000 55
-2014 Employee Smith,John 2000
+2015 Employee Smith,John 2000
+2015 Salesman Bill,Jones 3000 100000
+2015 Executive Bush,George 5000 55
+2015 Salesman Sam,Smith 3000 110000
+2015 Executive Phil,Jones 5000 49

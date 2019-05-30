@@ -1,3 +1,12 @@
+/////////////////////////////////////////////
+// File: Test.java (main)
+// Author: Justin Casey
+// Date: March 30, 2019
+// Purpose: Employee salary calculations.
+//          Displays various data points of
+//          employees salary (commissions, bonuses)
+//
+
 package app;
 
 import java.text.NumberFormat;
@@ -45,7 +54,7 @@ public class Test {
        * the default case will an executive assuming all input
        * is valid
        */
-      Employee employee = null;
+      Employee employee;
       switch (type) {
         case "Employee":
           employee = new Employee(name, monthlySalary);
@@ -79,24 +88,33 @@ public class Test {
   }
 
   private static void printReport(Employee[] employees, int year, int count) {
+
     // Report header
     System.out.println("****************************************");
     System.out.printf("****Employee stats for the year %d****\n", year);
     System.out.println("****************************************");
 
+    // Handle is year is empty
+    if (count <= 0){
+      System.out.printf("\nNo stats for the year %d\n\n", year);
+      System.out.println("****************************************\n");
+      return;
+    }
+
+    // used to print in $00.00 format
     NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
 
-    int totalEmployeeSalary = 0;
+    int averageEmployeeSalary = 0;
     for (int i = 0; i < count; i++) {
       System.out.println(employees[i].toString() +
           "  Annual Salary: " +
-          format.format(employees[i].annualSalary()));
+          format.format(employees[i].annualSalary()) + "\n");
 
-      totalEmployeeSalary += employees[i].annualSalary();
+      averageEmployeeSalary += employees[i].annualSalary();
     }
 
     System.out.printf(
-        "\n****Total Employee compensation for %d was %s ****\n\n",
-        year, format.format(totalEmployeeSalary));
+        "\n****Avg Employee compensation for %d was %s ****\n\n",
+        year, format.format(averageEmployeeSalary / count));
   }
 }

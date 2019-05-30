@@ -1,3 +1,12 @@
+/////////////////////////////////////////////
+// File: Executive.java (base class)
+// Author: Justin Casey
+// Date: March 30, 2019
+// Purpose: Class represents Salesman
+//          employees. Is a child of
+//          Employee.java
+//
+
 package app;
 
 public class Salesman extends Employee {
