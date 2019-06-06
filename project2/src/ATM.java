@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class ATM extends JFrame{
@@ -7,11 +9,15 @@ public class ATM extends JFrame{
   static final int TEXT_WIDTH = 200;
   static final int TEXT_HEIGHT = 25;
 
+  // init accounts
+  private Account checking = new Account(100);
+  private Account savings = new Account(50);
+
   // Declare all buttons
   private JButton withdrawButton = new JButton("Withdraw");
   private JButton depositButton = new JButton("Deposit");
   private JButton transferButton = new JButton("Transfer");
-  private JButton balanceButton = new JButton("Button");
+  private JButton balanceButton = new JButton("Balance");
 
   // Declare all radio buttons
   private JRadioButton checkingRadioButton = new JRadioButton("Checking");
@@ -25,6 +31,7 @@ public class ATM extends JFrame{
 
   private JOptionPane frame = new JOptionPane();
 
+  // Constructor
   public ATM() {
     super("Justin ATM");
     setLayout(new GridBagLayout());
@@ -67,6 +74,106 @@ public class ATM extends JFrame{
 
     // adding input field to the input panel
     inputPanel.add(amount);
+
+    // set action listeners
+    balanceButton.addActionListener(new BalanceButtonListener());
+    withdrawButton.addActionListener(new WithdrawButtonListener());
+    depositButton.addActionListener(new DepositButtonListener());
+    transferButton.addActionListener(new TransferButtonListener());
+  }
+
+  /*
+   * Action Listeners for the 4 buttons
+   */
+
+  private class BalanceButtonListener implements ActionListener {
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+      if (checkingRadioButton.isSelected()) {
+        showMessage(checking.getBalance(), "in checking account");
+      } else {
+        showMessage(savings.getBalance(), "in savings account");
+      }
+    }
+  }
+
+  private class WithdrawButtonListener implements ActionListener {
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+
+    }
+  }
+
+  private class DepositButtonListener implements ActionListener {
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+      double input = getInput();
+      if (isValidInput(input)) {
+        if (checkingRadioButton.isSelected()) {
+          checking.deposit(input);
+          showMessage(input, "deposited into checking");
+        } else {
+          savings.deposit(input);
+          showMessage(input, "deposited into savings");
+        }
+      } else { showMessage("Invalid Input: Enter a multiple of 20"); }
+      clearTextField();
+    }
+  }
+
+  private class TransferButtonListener implements ActionListener {
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+      double input = getInput();
+      if (isValidInput(input)) {
+        if (checkingRadioButton.isSelected()) {
+          try {
+            savings.transferTo(checking, input);
+            showMessage(input, "transferred to checking");
+          } catch (InsufficientFunds insufficientFunds) {
+            insufficientFunds.printStackTrace();
+          }
+        } else {
+          try {
+            checking.transferTo(savings, input);
+            showMessage(input, "transferred to savings");
+          } catch (InsufficientFunds insufficientFunds) {
+            insufficientFunds.printStackTrace();
+          }
+        }
+      } else { showMessage("Invalid Input: Enter a multiple of 20"); }
+      clearTextField();
+    }
+  }
+
+  public double getInput() {
+    try {
+      return Double.parseDouble(amount.getText());
+    } catch (NumberFormatException e) {
+      showMessage("Please Enter a number!");
+      clearTextField();
+      return 0;
+    }
+  }
+
+  public void clearTextField() {
+    amount.setText("");
+  }
+
+  public boolean isValidInput(double input) {
+    return (input % 20) == 0 && (input > 0);
+  }
+
+  public void showMessage(double amount, String message) {
+    JOptionPane.showMessageDialog(frame, amount + " " + message);
+  }
+
+  public void showMessage(String message) {
+    JOptionPane.showMessageDialog(frame, message);
   }
 
   public void setFrame(int width, int height) {
@@ -78,6 +185,7 @@ public class ATM extends JFrame{
   private void display() {
     setVisible(true);
   }
+
 
   public static void main(String[] args) {
     ATM window = new ATM();
