@@ -6,5 +6,4 @@ public class InsufficientFunds extends Exception {
     JOptionPane frame = new JOptionPane();
     JOptionPane.showMessageDialog(frame, "Insufficient Funds!");
   }
-
 }

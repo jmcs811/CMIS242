@@ -3,7 +3,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class ATM extends JFrame{
+public class ATM extends JFrame {
+
   static final int WIDTH = 350;
   static final int HEIGHT = 200;
   static final int TEXT_WIDTH = 200;
@@ -119,7 +120,9 @@ public class ATM extends JFrame{
           savings.deposit(input);
           showMessage(input, "deposited into savings");
         }
-      } else { showMessage("Invalid Input: Enter a multiple of 20"); }
+      } else {
+        showMessage("Invalid Input: Enter a multiple of 20");
+      }
       clearTextField();
     }
   }
@@ -145,7 +148,9 @@ public class ATM extends JFrame{
             insufficientFunds.printStackTrace();
           }
         }
-      } else { showMessage("Invalid Input: Enter a multiple of 20"); }
+      } else {
+        showMessage("Invalid Input: Enter a multiple of 20");
+      }
       clearTextField();
     }
   }

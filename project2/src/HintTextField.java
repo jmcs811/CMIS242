@@ -15,7 +15,7 @@ public class HintTextField extends JTextField {
       // and set the color to black
       @Override
       public void focusGained(FocusEvent e) {
-        if (getText().equals(hint)){
+        if (getText().equals(hint)) {
           setText("");
           setForeground(Color.BLACK);
         } else {
@@ -37,5 +37,4 @@ public class HintTextField extends JTextField {
       }
     });
   }
-
 }
