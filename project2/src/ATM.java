@@ -103,7 +103,44 @@ public class ATM extends JFrame {
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
+      double input = getInput();
+      if (isValidInput(input)) {
+        if (checkingRadioButton.isSelected()) {
+          if (getTotalWithDrawls() < 4) {
+            try {
+              checking.withdraw(input);
+              showMessage(input, "withdrawn from checking");
+            } catch (InsufficientFunds insufficientFunds) {
+              insufficientFunds.printStackTrace();
+            }
+          } else {
+            try {
+              checking.withdrawWithFee(input);
+              showMessage(input, "withdrawn from checking (plus a fee)");
+            } catch (InsufficientFunds insufficientFunds) {
+              insufficientFunds.printStackTrace();
+            }
+          }
+        } else {
+          if (getTotalWithDrawls() < 4) {
+            try {
+              savings.withdraw(input);
+              showMessage(input, "withdrawn from savings");
+            } catch (InsufficientFunds insufficientFunds) {
+              insufficientFunds.printStackTrace();
+            }
+          } else {
+            try {
+              savings.withdrawWithFee(input);
+              showMessage(input, "withdrawn from savings (plus a fee)");
+            } catch (InsufficientFunds insufficientFunds) {
+              insufficientFunds.printStackTrace();
+            }
+          }
 
+        }
+      }
+      clearTextField();
     }
   }
 
@@ -179,6 +216,10 @@ public class ATM extends JFrame {
 
   public void showMessage(String message) {
     JOptionPane.showMessageDialog(frame, message);
+  }
+
+  private int getTotalWithDrawls() {
+    return checking.totalTransactions + savings.totalTransactions;
   }
 
   public void setFrame(int width, int height) {

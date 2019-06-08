@@ -1,6 +1,8 @@
 public class Account {
 
-  private static int totalTransactions;
+  public double TRANSACTION_FEE = 1.50;
+
+  public static int totalTransactions = 0;
   private double balance;
 
 
@@ -24,7 +26,15 @@ public class Account {
     if (this.balance - amount < 0) {
       throw new InsufficientFunds();
     }
+
     this.balance = this.balance - amount;
+  }
+
+  public void withdrawWithFee(double amount) throws InsufficientFunds {
+    if (this.balance - amount - TRANSACTION_FEE < 0) {
+      throw new InsufficientFunds();
+    }
+    this.balance = this.balance - amount - TRANSACTION_FEE;
   }
 
   public void transferTo(Account to, double amount) throws InsufficientFunds {
