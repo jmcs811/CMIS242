@@ -3,9 +3,9 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import javax.swing.JTextField;
 
-public class HintTextField extends JTextField {
+class HintTextField extends JTextField {
 
-  public HintTextField(final String hint) {
+  HintTextField(final String hint) {
     // set text to hint and color to gray
     setText(hint);
     setForeground(Color.GRAY);

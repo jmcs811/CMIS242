@@ -5,8 +5,11 @@ import javax.swing.*;
 
 public class ATM extends JFrame {
 
+  // Width and Height for Frame
   static final int WIDTH = 350;
   static final int HEIGHT = 200;
+
+  // Width and length for text field
   static final int TEXT_WIDTH = 200;
   static final int TEXT_HEIGHT = 25;
 
@@ -27,16 +30,16 @@ public class ATM extends JFrame {
   // Declare input field
   private JTextField amount = new HintTextField("Enter Amount to Transfer");
 
-  // Declare button groip
+  // Declare button group
   private ButtonGroup radioButtons = new ButtonGroup();
 
   private JOptionPane frame = new JOptionPane();
 
   // Constructor
-  public ATM() {
+  ATM() {
     super("Justin ATM");
     setLayout(new GridBagLayout());
-    setFrame(WIDTH, HEIGHT);
+    setFrame();
 
     GridBagConstraints layout = new GridBagConstraints();
     layout.gridy = 2;
@@ -86,9 +89,7 @@ public class ATM extends JFrame {
   /*
    * Action Listeners for the 4 buttons
    */
-
   private class BalanceButtonListener implements ActionListener {
-
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
       if (checkingRadioButton.isSelected()) {
@@ -100,7 +101,6 @@ public class ATM extends JFrame {
   }
 
   private class WithdrawButtonListener implements ActionListener {
-
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
       double input = getInput();
@@ -145,7 +145,6 @@ public class ATM extends JFrame {
   }
 
   private class DepositButtonListener implements ActionListener {
-
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
       double input = getInput();
@@ -165,7 +164,6 @@ public class ATM extends JFrame {
   }
 
   private class TransferButtonListener implements ActionListener {
-
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
       double input = getInput();
@@ -192,7 +190,7 @@ public class ATM extends JFrame {
     }
   }
 
-  public double getInput() {
+  private double getInput() {
     try {
       return Double.parseDouble(amount.getText());
     } catch (NumberFormatException e) {
@@ -202,19 +200,19 @@ public class ATM extends JFrame {
     }
   }
 
-  public void clearTextField() {
+  private void clearTextField() {
     amount.setText("");
   }
 
-  public boolean isValidInput(double input) {
+  private boolean isValidInput(double input) {
     return (input % 20) == 0 && (input > 0);
   }
 
-  public void showMessage(double amount, String message) {
+  private void showMessage(double amount, String message) {
     JOptionPane.showMessageDialog(frame, amount + " " + message);
   }
 
-  public void showMessage(String message) {
+  private void showMessage(String message) {
     JOptionPane.showMessageDialog(frame, message);
   }
 
@@ -222,19 +220,13 @@ public class ATM extends JFrame {
     return checking.totalTransactions + savings.totalTransactions;
   }
 
-  public void setFrame(int width, int height) {
-    setSize(width, height);
+  private void setFrame() {
+    setSize(ATM.WIDTH, ATM.HEIGHT);
     setLocationRelativeTo(null);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }
 
-  private void display() {
+  void display() {
     setVisible(true);
-  }
-
-
-  public static void main(String[] args) {
-    ATM window = new ATM();
-    window.display();
   }
 }
