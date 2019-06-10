@@ -1,4 +1,4 @@
-public class Account {
+class Account {
 
   private double TRANSACTION_FEE = 1.50;
 

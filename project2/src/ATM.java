@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class ATM extends JFrame {
+class ATM extends JFrame {
 
   // Width and Height for Frame
   static final int WIDTH = 350;
