@@ -23,6 +23,7 @@ class Account {
       throw new InsufficientFunds();
     }
     this.balance = this.balance - amount;
+    totalTransactions++;
   }
 
   void withdrawWithFee(double amount) throws InsufficientFunds {

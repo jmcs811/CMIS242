@@ -109,7 +109,7 @@ class ATM extends JFrame {
           if (getTotalWithDrawls() < 4) {
             try {
               checking.withdraw(input);
-              showMessage(input, "withdrawn from checking");
+              showMessage(input, "withdrawn from checking " + getTotalWithDrawls());
             } catch (InsufficientFunds insufficientFunds) {
               insufficientFunds.printStackTrace();
             }
@@ -125,7 +125,7 @@ class ATM extends JFrame {
           if (getTotalWithDrawls() < 4) {
             try {
               savings.withdraw(input);
-              showMessage(input, "withdrawn from savings");
+              showMessage(input, "withdrawn from savings " + getTotalWithDrawls());
             } catch (InsufficientFunds insufficientFunds) {
               insufficientFunds.printStackTrace();
             }
