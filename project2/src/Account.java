@@ -4,10 +4,12 @@ class Account {
 
   int totalTransactions = 0;
   private double balance;
+  private String name;
 
 
-  Account(int startingBalance) {
+  Account(int startingBalance, String name) {
     this.balance = startingBalance;
+    this.name = name;
   }
 
   double getBalance() {
@@ -36,5 +38,9 @@ class Account {
   void transferTo(Account to, double amount) throws InsufficientFunds {
     this.withdraw(amount);
     to.deposit(amount);
+  }
+
+  public String  toString() {
+    return name;
   }
 }

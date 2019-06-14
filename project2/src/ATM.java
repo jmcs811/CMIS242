@@ -14,8 +14,8 @@ class ATM extends JFrame {
   static final int TEXT_HEIGHT = 25;
 
   // init accounts
-  private Account checking = new Account(100);
-  private Account savings = new Account(50);
+  private Account checking = new Account(100, "checking");
+  private Account savings = new Account(50, "savings");
 
   // Declare all buttons
   private JButton withdrawButton = new JButton("Withdraw");
@@ -104,43 +104,36 @@ class ATM extends JFrame {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
       double input = getInput();
-      if (isValidInput(input)) {
-        if (checkingRadioButton.isSelected()) {
-          if (getTotalWithDrawls() < 4) {
-            try {
-              checking.withdraw(input);
-              showMessage(input, "withdrawn from checking " + getTotalWithDrawls());
-            } catch (InsufficientFunds insufficientFunds) {
-              insufficientFunds.printStackTrace();
-            }
-          } else {
-            try {
-              checking.withdrawWithFee(input);
-              showMessage(input, "withdrawn from checking (plus a fee)");
-            } catch (InsufficientFunds insufficientFunds) {
-              insufficientFunds.printStackTrace();
-            }
-          }
-        } else {
-          if (getTotalWithDrawls() < 4) {
-            try {
-              savings.withdraw(input);
-              showMessage(input, "withdrawn from savings " + getTotalWithDrawls());
-            } catch (InsufficientFunds insufficientFunds) {
-              insufficientFunds.printStackTrace();
-            }
-          } else {
-            try {
-              savings.withdrawWithFee(input);
-              showMessage(input, "withdrawn from savings (plus a fee)");
-            } catch (InsufficientFunds insufficientFunds) {
-              insufficientFunds.printStackTrace();
-            }
-          }
-
-        }
-      }
+      withDraw(input);
       clearTextField();
+    }
+  }
+
+  private void withDraw(double input) {
+    if (isValidInput(input)) {
+      if (checkingRadioButton.isSelected()) {
+        withDrawLogic(checking, input);
+      } else {
+        withDrawLogic(savings, input);
+      }
+    }
+  }
+
+  private void  withDrawLogic(Account account, Double input) {
+    if (getTotalWithDrawls() < 4) {
+      try {
+        account.withdraw(input);
+        showMessage(input, "withdrawn from " + account.toString());
+      } catch (InsufficientFunds insufficientFunds) {
+        insufficientFunds.printStackTrace();
+      }
+    } else {
+      try {
+        account.withdrawWithFee(input);
+        showMessage(input, "withdraw plus a fee" + account.toString());
+      } catch (InsufficientFunds insufficientFunds) {
+        insufficientFunds.printStackTrace();
+      }
     }
   }
 
