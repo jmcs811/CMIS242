@@ -1,3 +1,12 @@
+/////////////////////////////////////////////
+// File: HintTextField.java
+// Author: Justin Casey
+// Date: June 6, 2019
+// Purpose: Shows a hint in the
+//          input text field.
+//          Helps the user to know what to enter
+//
+
 import java.awt.Color;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;

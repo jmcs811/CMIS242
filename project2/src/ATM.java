@@ -1,3 +1,13 @@
+/////////////////////////////////////////////
+// File: ATM.java
+// Author: Justin Casey
+// Date: June 6, 2019
+// Purpose: This class defines
+//          the GUI and the action
+//          handlers required for the
+//          ATM interface.
+//
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,12 +16,12 @@ import javax.swing.*;
 class ATM extends JFrame {
 
   // Width and Height for Frame
-  static final int WIDTH = 350;
-  static final int HEIGHT = 200;
+  private static final int WIDTH = 350;
+  private static final int HEIGHT = 200;
 
   // Width and length for text field
-  static final int TEXT_WIDTH = 200;
-  static final int TEXT_HEIGHT = 25;
+  private static final int TEXT_WIDTH = 200;
+  private static final int TEXT_HEIGHT = 25;
 
   // init accounts
   private Account checking = new Account(100, "checking");
@@ -33,6 +43,7 @@ class ATM extends JFrame {
   // Declare button group
   private ButtonGroup radioButtons = new ButtonGroup();
 
+  // frame for alerts
   private JOptionPane frame = new JOptionPane();
 
   // Constructor
@@ -86,10 +97,9 @@ class ATM extends JFrame {
     transferButton.addActionListener(new TransferButtonListener());
   }
 
-  /*
-   * Action Listeners for the 4 buttons
-   */
+  //Action Listeners for the 4 buttons
   private class BalanceButtonListener implements ActionListener {
+
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
       if (checkingRadioButton.isSelected()) {
@@ -101,10 +111,15 @@ class ATM extends JFrame {
   }
 
   private class WithdrawButtonListener implements ActionListener {
+
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
       double input = getInput();
-      withDraw(input);
+      if (isValidInput(input)){
+        withDraw(input);
+      } else {
+        showMessage("Must be multiple of 20");
+      }
       clearTextField();
     }
   }
@@ -119,7 +134,7 @@ class ATM extends JFrame {
     }
   }
 
-  private void  withDrawLogic(Account account, Double input) {
+  private void withDrawLogic(Account account, Double input) {
     if (getTotalWithDrawls() < 4) {
       try {
         account.withdraw(input);
@@ -130,7 +145,7 @@ class ATM extends JFrame {
     } else {
       try {
         account.withdrawWithFee(input);
-        showMessage(input, "withdraw plus a fee" + account.toString());
+        showMessage(input, "withdrawn from " + account.toString() + " plus a fee");
       } catch (InsufficientFunds insufficientFunds) {
         insufficientFunds.printStackTrace();
       }
@@ -138,10 +153,10 @@ class ATM extends JFrame {
   }
 
   private class DepositButtonListener implements ActionListener {
+
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
       double input = getInput();
-      if (isValidInput(input)) {
         if (checkingRadioButton.isSelected()) {
           checking.deposit(input);
           showMessage(input, "deposited into checking");
@@ -149,18 +164,15 @@ class ATM extends JFrame {
           savings.deposit(input);
           showMessage(input, "deposited into savings");
         }
-      } else {
-        showMessage("Invalid Input: Enter a multiple of 20");
-      }
       clearTextField();
     }
   }
 
   private class TransferButtonListener implements ActionListener {
+
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
       double input = getInput();
-      if (isValidInput(input)) {
         if (checkingRadioButton.isSelected()) {
           try {
             savings.transferTo(checking, input);
@@ -176,9 +188,6 @@ class ATM extends JFrame {
             insufficientFunds.printStackTrace();
           }
         }
-      } else {
-        showMessage("Invalid Input: Enter a multiple of 20");
-      }
       clearTextField();
     }
   }

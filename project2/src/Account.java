@@ -1,3 +1,13 @@
+/////////////////////////////////////////////
+// File: Account.java
+// Author: Justin Casey
+// Date: June 6, 2019
+// Purpose: class for the accounts used
+//          in the ATM class. Has methods
+//          for various ATM transactions
+//          (Deposit, Withdraw, etc)
+//
+
 class Account {
 
   private double TRANSACTION_FEE = 1.50;
