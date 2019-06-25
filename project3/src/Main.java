@@ -1,6 +1,9 @@
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -79,11 +82,29 @@ public class Main extends JFrame {
         constraints.gridy = 5;
         main.add(efficiencyField, constraints);
 
+        class CalculateButtonListener implements ActionListener {
+
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                int input = getInput(inputField);
+                if (iterButton.isSelected()) {
+                    resultField.setText(String.valueOf(Sequence.computeIterative(input)));
+                } else {
+                    resultField.setText(String.valueOf(Sequence.computeRecursive(input)));
+                }
+            }
+        }
+
+        calculateButton.addActionListener(new CalculateButtonListener());
         add(main);
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(250,300);
         setVisible(true);
+    }
+
+    private int getInput(JTextField input) {
+        return Integer.parseInt(input.getText());
     }
 
     public static void main(String[] args) {
