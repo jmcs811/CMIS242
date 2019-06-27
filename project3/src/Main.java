@@ -109,27 +109,20 @@ public class Main extends JFrame {
     buttonGroup.add(iterButton);
     buttonGroup.add(recrButton);
 
-    // creating the action listener for the calculate btn
-    class CalculateButtonListener implements ActionListener {
-
-      @Override
-      public void actionPerformed(ActionEvent actionEvent) {
-        try {
-          int input = getInput(inputField);
-          if (iterButton.isSelected()) {
-            resultField.setText(String.valueOf(Sequence.computeIterative(input)));
-          } else {
-            resultField.setText(String.valueOf(Sequence.computeRecursive(input)));
-          }
-          efficiencyField.setText(String.valueOf(Sequence.getEfficiency()));
-        } catch (NumberFormatException e) {
-          JOptionPane.showMessageDialog(null, "Please Enter a number!");
-        }
-      }
-    }
-
     // add the listener to the button
-    calculateButton.addActionListener(new CalculateButtonListener());
+    calculateButton.addActionListener(e -> {
+      try {
+        int input = getInput(inputField);
+        if (iterButton.isSelected()) {
+          resultField.setText(String.valueOf(Sequence.computeIterative(input)));
+        } else {
+          resultField.setText(String.valueOf(Sequence.computeRecursive(input)));
+        }
+        efficiencyField.setText(String.valueOf(Sequence.getEfficiency()));
+      } catch (NumberFormatException nfe) {
+        JOptionPane.showMessageDialog(null, "Please Enter a number!");
+      }
+    });
     add(main);
 
     setDefaultCloseOperation(EXIT_ON_CLOSE);
