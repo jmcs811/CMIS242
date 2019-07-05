@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="148414fb-1c27-4c77-aea8-856b1f9d9374" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../project2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,18 +18,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1850">
-              <caret line="125" column="71" selection-start-line="125" selection-start-column="71" selection-end-line="125" selection-end-column="71" />
+            <state relative-caret-position="85">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Example.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
               <folding>
-                <element signature="e#0#5041#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="e#4176#5067#0" expanded="true" />
-                <element signature="e#5066#5067#0" expanded="true" />
-                <element signature="e#5391#5392#0" expanded="true" />
-                <element signature="e#5455#5456#0" expanded="true" />
+                <element signature="e#111#112#0" expanded="true" />
+                <element signature="e#139#140#0" expanded="true" />
+                <element signature="e#184#185#0" expanded="true" />
+                <element signature="e#213#214#0" expanded="true" />
+                <element signature="e#373#382#0" expanded="true" />
+                <element signature="e#512#520#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -36,13 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Sequence.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
+            <state relative-caret-position="748">
               <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#989#0" expanded="true" />
-                <element signature="e#696#697#0" expanded="true" />
-                <element signature="e#723#724#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -65,15 +71,17 @@
         <option value="$PROJECT_DIR$/src/Quiz3A.java" />
         <option value="$PROJECT_DIR$/src/RecursionExample.java" />
         <option value="$PROJECT_DIR$/src/Sequence.java" />
+        <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Example.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
-    <option name="y" value="27" />
-    <option name="width" value="2560" />
-    <option name="height" value="1053" />
+    <option name="x" value="2095" />
+    <option name="y" value="246" />
+    <option name="width" value="2289" />
+    <option name="height" value="941" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -116,7 +124,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.test">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="project3" />
@@ -128,7 +136,7 @@
       </method>
     </configuration>
     <configuration name="test" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="RecursionExample" />
+      <option name="MAIN_CLASS_NAME" value="Example" />
       <module name="project3" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -159,8 +167,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="2560" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14359586" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14717582" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -169,15 +178,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33842796" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33842796" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3995633" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.46179038" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.46028292" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32969433" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -191,29 +200,32 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Quiz3A.java" />
     <entry file="file://$PROJECT_DIR$/src/RecursionExample.java" />
-    <entry file="file://$PROJECT_DIR$/src/Sequence.java">
+    <entry file="file://$PROJECT_DIR$/src/Test.java" />
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#989#0" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
-            <element signature="e#723#724#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Sequence.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1850">
-          <caret line="125" column="71" selection-start-line="125" selection-start-column="71" selection-end-line="125" selection-end-column="71" />
+        <state relative-caret-position="748">
+          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Example.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
           <folding>
-            <element signature="e#0#5041#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#4176#5067#0" expanded="true" />
-            <element signature="e#5066#5067#0" expanded="true" />
-            <element signature="e#5391#5392#0" expanded="true" />
-            <element signature="e#5455#5456#0" expanded="true" />
+            <element signature="e#111#112#0" expanded="true" />
+            <element signature="e#139#140#0" expanded="true" />
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#213#214#0" expanded="true" />
+            <element signature="e#373#382#0" expanded="true" />
+            <element signature="e#512#520#0" expanded="true" />
           </folding>
         </state>
       </provider>
