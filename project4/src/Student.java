@@ -1,20 +1,20 @@
 public class Student {
 
-  String name;
-  String major;
-  double gpa;
-  int credits;
-  int gradePoints;
-  int qualitPoints;
+  private String name;
+  private String major;
+  private double gpa;
+  private int credits;
+  private int gradePoints;
+  private int qualityPoints;
 
-  public Student(String name, String major) {
+  Student(String name, String major) {
     this.name = name;
     this.major = major;
     this.credits = 0;
-    this.qualitPoints = 0;
+    this.qualityPoints = 0;
   }
 
-  public void courseCompleted(String grade, int creditHours) {
+  void courseCompleted(String grade, int creditHours) {
     grade = grade.toUpperCase();
     switch (grade) {
       case "A":
@@ -32,10 +32,10 @@ public class Student {
     }
 
     gradePoints = gradePoints * creditHours;
-    qualitPoints += gradePoints;
+    qualityPoints += gradePoints;
     credits += creditHours;
 
-    gpa = qualitPoints / credits;
+    gpa = qualityPoints / credits;
   }
 
   @Override

@@ -17,7 +17,7 @@ public class Main extends JFrame {
   private String name;
   private String major;
   private String selection;
-  HashMap<String, Student> studentDB = new HashMap<>();
+  private HashMap<String, Student> studentDB = new HashMap<>();
 
   private Main() {
     super("Project 4");
