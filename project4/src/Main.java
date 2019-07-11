@@ -22,6 +22,7 @@ public class Main extends JFrame {
   private Main() {
     super("Project 4");
 
+    // Main panel for the UI
     JPanel main = new JPanel();
 
     main.setLayout(new GridBagLayout());
@@ -101,12 +102,15 @@ public class Main extends JFrame {
     // Add Main Panel
     add(main);
 
+
+    // ActionListen for the process button
     processButton.addActionListener((ActionEvent e) -> {
       id = idTextField.getText();
       name = nameTextField.getText();
       major = majorTextField.getText();
       selection = selectCombobox.getSelectedItem().toString();
 
+      // Switch statement for the 4 DB operations
       try {
         if (id.isEmpty()) {
           throw new NullPointerException();

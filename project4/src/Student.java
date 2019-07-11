@@ -7,6 +7,7 @@ public class Student {
   private int gradePoints;
   private int qualityPoints;
 
+  // Constructor
   Student(String name, String major) {
     this.name = name;
     this.major = major;
@@ -14,6 +15,7 @@ public class Student {
     this.qualityPoints = 0;
   }
 
+  // add course grade info
   void courseCompleted(String grade, int creditHours) {
     grade = grade.toUpperCase();
     switch (grade) {
