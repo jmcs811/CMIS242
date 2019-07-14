@@ -1,5 +1,16 @@
+/////////////////////////////////////////////
+// File: Student.java
+// Author: Justin Casey
+// Date: July 10, 2019
+// Purpose: Class defines the
+// student object and the course
+// completed function and the
+// to string function
+//
+
 public class Student {
 
+  // var needed for the Student class
   private String name;
   private String major;
   private double gpa;

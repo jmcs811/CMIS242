@@ -1,3 +1,11 @@
+/////////////////////////////////////////////
+// File: Main.java
+// Author: Justin Casey
+// Date: July 10, 2019
+// Purpose: This class defines
+//          the gui.
+//
+
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -197,6 +205,7 @@ public class Main extends JFrame {
       majorTextField.setText("");
     });
 
+    // setting options for the JFrame
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setSize(350, 200);
     setLocationRelativeTo(null);
