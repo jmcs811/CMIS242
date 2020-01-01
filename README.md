@@ -1,3 +1,6 @@
 # CMIS 242: Intermediate Programming
 
-Collection of projects from CMIS 242. All projects are in Java.
+* Project 1 - Employee Object oriented exercise
+* Project 2 - Simple ATM program
+* Project 3 - Recursive
+* Project 4 - GPA calculator
